@@ -51,7 +51,7 @@ export default function AboutPage() {
               alt="Sujit Raj Thapa"
               width={600}
               height={600}
-              className="w-full object-cover"
+              className="w-50 h-50 rounded-full object-cover  "
             />
           </div>
 
