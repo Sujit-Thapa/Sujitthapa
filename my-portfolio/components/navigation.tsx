@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Globe, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "./ui/button"
 import { cn } from "@/lib/utils"
 import ThemeToggle from "./ui/theme-toggle"
@@ -59,11 +59,28 @@ export default function Navigation() {
             </Button>
           </div>
         </div>
-      </div>
+      </div> {isMenuOpen && (
+        <div className="container py-4">
+          <nav className="flex flex-col space-y-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "transition-colors hover:text-foreground/80",
+                  pathname === item.href ? "text-foreground" : "text-foreground/60",
+                )}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
      
     </header>
    
   )
   
 }
-
