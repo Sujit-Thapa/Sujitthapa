@@ -1,7 +1,7 @@
 const experiences = [
   {
     company: "Griffity Studios",
-    logo: "/placeholder.svg",
+    logo: "/griffity.jpg",
     role: "Web developer, 3D Animation artist",
     period: "June 2023 - Present",
     location: "Kathmandu, Nepal",
@@ -10,7 +10,7 @@ const experiences = [
   },
   {
     company: "Griffity Studios",
-    logo: "/placeholder.svg",
+    logo: "/griffity.jpg",
     role: "Project Manager",
     period: "June 2022 - Present",
     location: "Kathmandu, Nepal",
@@ -40,7 +40,7 @@ export default function WorkExperience() {
           >
             <div className="flex items-start gap-4 mb-4">
               <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
-                <img src={exp.logo || "/placeholder.svg"} alt={`${exp.company} logo`} className="w-8 h-8" />
+                <img src={exp.logo || "/placeholder.svg"} alt={`${exp.company} logo`} className="w-8 h-8 rounded-sm" />
               </div>
               <div>
                 <h3 className="font-bold text-lg">{exp.role}</h3>
