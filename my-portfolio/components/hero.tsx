@@ -5,14 +5,6 @@ import { Github, Twitter, Linkedin, Instagram, ComputerIcon as Steam, Youtube } 
 import Link from "next/link"
 import GeometricPattern from "./geometric-pattern"
 
-const socialLinks = [
-  { icon: Github, href: "https://github.com/Sujit-Thapa", label: "GitHub" },
-  { icon: Twitter, href: "https://x.com/_thapa_sujit_", label: "Twitter" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/sujit-thapa-12265125a/", label: "LinkedIn" },
-  { icon: Instagram, href: "https://www.instagram.com/_thapa_sujit_/", label: "Instagram" },
-  { icon: Steam, href: "https://steam.com", label: "Steam" },
-  { icon: Youtube, href: "https://www.youtube.com/@sujitthapa9990", label: "YouTube" },
-]
 
 export default function Hero() {
   return (
@@ -38,23 +30,7 @@ export default function Hero() {
             software that is beneficial to developers and the world at large.
           </motion.p>
 
-          <motion.div
-            className="grid grid-cols-3 md:grid-cols-6 gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            {socialLinks.map((social) => (
-              <Link
-                key={social.label}
-                href={social.href}
-                className="p-3 hover:text-primary transition-colors"
-                aria-label={social.label}
-              >
-                <social.icon className="h-5 w-5" />
-              </Link>
-            ))}
-          </motion.div>
+         
         </div>
 
         <div className="relative hidden lg:block">
