@@ -19,7 +19,7 @@ const experiences = [
   },
   {
     company: "Freelancer",
-    logo: "/placeholder.svg",
+    logo: "/images.png",
     role: "Video editor and Graphics Designer",
     period: "August 2018 - February 2020",
     location: "Kathmandu, Nepal",

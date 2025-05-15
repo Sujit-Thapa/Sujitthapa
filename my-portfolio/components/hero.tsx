@@ -1,10 +1,24 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Twitter, Linkedin, Instagram, ComputerIcon as Steam, Youtube } from "lucide-react"
-import Link from "next/link"
 import GeometricPattern from "./geometric-pattern"
-
+import {
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiMongodb,
+  SiBlender,
+  SiAdobeaftereffects,
+  SiDavinciresolve,
+  SiPostgresql,
+  SiFirebase,
+  SiAdobeillustrator,
+  SiHtml5,
+  SiCss3,
+  SiExpress,
+} from "react-icons/si"
 
 export default function Hero() {
   return (
@@ -30,7 +44,29 @@ export default function Hero() {
             software that is beneficial to developers and the world at large.
           </motion.p>
 
-         
+          {/* Logos section */}
+          <motion.div
+            className="flex flex-wrap gap-4 pt-4 text-3xl text-muted-foreground"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <SiJavascript title="JavaScript" />
+            <SiTypescript title="TypeScript" />
+            <SiHtml5 title="HTML5" />
+            <SiCss3 title="CSS3" />
+            <SiReact title="React" />
+            <SiNextdotjs title="Next.js" />
+            <SiNodedotjs title="Node.js" />
+            <SiExpress title="Express.js" />
+            <SiMongodb title="MongoDB" />
+            <SiPostgresql title="PostgreSQL" />
+            <SiFirebase title="Firebase" />
+            <SiBlender title="Blender" />
+            <SiAdobeaftereffects title="After Effects" />
+            <SiDavinciresolve title="DaVinci Resolve" />
+            <SiAdobeillustrator title="Adobe Illustrator" />
+          </motion.div>
         </div>
 
         <div className="relative hidden lg:block">
@@ -40,4 +76,3 @@ export default function Hero() {
     </section>
   )
 }
-
