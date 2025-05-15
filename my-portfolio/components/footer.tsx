@@ -16,22 +16,19 @@ export default function Footer() {
   const footerRef = useRef<HTMLElement>(null)
   const [showFloating, setShowFloating] = useState(true)
 
- useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => setShowFloating(!entry.isIntersecting),
-    { threshold: 0.1 }
-  )
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowFloating(!entry.isIntersecting),
+      { threshold: 0.1 }
+    )
 
-  if (footerRef.current) {
-    observer.observe(footerRef.current)
-  }
+    const footer = footerRef.current
+    if (footer) observer.observe(footer)
 
-  return () => {
-    if (footerRef.current) {
-      observer.unobserve(footerRef.current)
+    return () => {
+      if (footer) observer.unobserve(footer)
     }
-  }
-}, [])
+  }, [])
 
   const socials = (
     <div className="flex gap-6">
@@ -55,18 +52,15 @@ export default function Footer() {
       <AnimatePresence>
         {showFloating && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed bottom-4 left-1/2 -translate-x-1/2 transform z-50 bg-background border border-border p-3 rounded-full shadow-lg flex gap-6"
+           className="fixed bottom-4 left-1/2 -translate-x-1/2 transform z-50 bg-background border border-border p-3 rounded-full shadow-lg"
+            
           >
             {socials}
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Footer */}
+      {/* Footer Section */}
       <footer ref={footerRef} className="py-8 border-t border-border mt-24">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
           <motion.div

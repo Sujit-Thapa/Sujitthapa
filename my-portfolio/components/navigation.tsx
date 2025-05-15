@@ -12,10 +12,8 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-    { href: "/blogs", label: "Blogs" },
-
-
- { href: "/contact", label: "Contact" },
+  { href: "/blogs", label: "Blogs" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export default function Navigation() {
@@ -33,7 +31,7 @@ export default function Navigation() {
           </Link>
           
           
-          <nav className="flex items-center align-middle space-x-6 text-sm font-medium">
+          <nav className="flex z-50 items-center align-middle space-x-6 text-sm font-medium">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -48,14 +46,14 @@ export default function Navigation() {
             ))}
           </nav>
         </div>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
+        <div className="flex z-50 flex-1 items-center justify-between space-x-2 md:justify-end">
+          <div className="w-full z-50 flex-1 md:w-auto md:flex-none">
             <Button className="inline-flex items-center md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </div>
-          <div className="flex items-center justify-between md:justify-end">
+          <div className="flex z-50 items-center justify-between md:justify-end">
             <Button variant="ghost" size="icon" className="mr-2">
               <ThemeToggle />
               <span className="sr-only">Toggle theme</span>
@@ -63,8 +61,8 @@ export default function Navigation() {
           </div>
         </div>
       </div> {isMenuOpen && (
-        <div className="container py-4">
-          <nav className="flex flex-col space-y-4">
+        <div className="container z-50 py-4">
+          <nav className="flex z-50 flex-col space-y-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
