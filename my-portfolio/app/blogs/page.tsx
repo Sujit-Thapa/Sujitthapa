@@ -8,34 +8,30 @@ const blogPosts = [
   {
     title: "Trekking to Mardi Himal: My Mountain Escape",
     description:
-      "A personal story of challenge and awe, documenting my trek to Mardi Himal with stunning views and unexpected lessons.",
+      "A personal tale of altitude and awe — where clouds whispered secrets and the trail taught resilience.",
     slug: "/blog/mardi-himal-trek",
     tags: ["Trekking", "Nepal", "Adventure"],
   },
   {
     title: "How I Fell in Love with Animation",
     description:
-      "From Blender to After Effects — my creative journey into the world of 3D and motion design.",
+      "A journey through motion and imagination — from Blender’s 3D dreams to After Effects' magic.",
     slug: "/blog/animation-journey",
     tags: ["Animation", "Blender", "Story"],
   },
   {
     title: "Mastering Backend with Node.js",
-    description: "An in-depth guide to building scalable backend APIs using Node, Express, and MongoDB.",
+    description:
+      "Behind every beautiful frontend lies a heartbeat of code — discover how to sculpt APIs that scale and speak.",
     slug: "/blog/mastering-backend",
     tags: ["Backend", "Node.js", "API"],
   },
   {
     title: "Getting Started with React Native",
-    description: "Learn how to build beautiful mobile apps with React Native and Expo.",
+    description:
+      "From idea to app — craft digital journeys with React Native and paint pixels with purpose.",
     slug: "/blog/react-native-guide",
     tags: ["Mobile", "React Native", "Frontend"],
-  },
-  {
-    title: "PostgreSQL vs MongoDB",
-    description: "Which one is better for your next project? Here's a breakdown of the pros and cons.",
-    slug: "/blog/postgres-vs-mongo",
-    tags: ["Database", "PostgreSQL", "MongoDB"],
   },
 ]
 
@@ -50,7 +46,7 @@ export default function BlogSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            From the Blog
+            Echoes from the Blog
           </motion.h1>
 
           <motion.p
@@ -59,7 +55,7 @@ export default function BlogSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Stories, insights, and tutorials — from trekking the Himalayas to building beautiful software and exploring 3D animation.
+            Walk through stories where mountains echo, pixels dance, and code breathes life. These are more than tutorials — they’re pieces of soul.
           </motion.p>
 
           {/* Blog Previews */}
@@ -88,11 +84,6 @@ export default function BlogSection() {
               </Link>
             ))}
           </motion.div>
-        </div>
-
-        {/* Visual side panel */}
-        <div className="relative hidden lg:block">
-          <GeometricPattern />
         </div>
       </div>
     </section>
