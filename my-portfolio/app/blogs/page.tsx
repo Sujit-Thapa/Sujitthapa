@@ -2,35 +2,30 @@
 
 import { motion } from "framer-motion"
 import GeometricPattern from "@/components/geometric-pattern"
-import Link from "next/link"
 
 const blogPosts = [
   {
     title: "Trekking to Mardi Himal: My Mountain Escape",
     description:
       "A personal tale of altitude and awe — where clouds whispered secrets and the trail taught resilience.",
-    slug: "/blog/mardi-himal-trek",
     tags: ["Trekking", "Nepal", "Adventure"],
   },
   {
     title: "How I Fell in Love with Animation",
     description:
       "A journey through motion and imagination — from Blender’s 3D dreams to After Effects' magic.",
-    slug: "/blog/animation-journey",
     tags: ["Animation", "Blender", "Story"],
   },
   {
     title: "Mastering Backend with Node.js",
     description:
       "Behind every beautiful frontend lies a heartbeat of code — discover how to sculpt APIs that scale and speak.",
-    slug: "/blog/mastering-backend",
     tags: ["Backend", "Node.js", "API"],
   },
   {
     title: "Getting Started with React Native",
     description:
       "From idea to app — craft digital journeys with React Native and paint pixels with purpose.",
-    slug: "/blog/react-native-guide",
     tags: ["Mobile", "React Native", "Frontend"],
   },
 ]
@@ -55,10 +50,11 @@ export default function BlogSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Walk through stories where mountains echo, pixels dance, and code breathes life. These are more than tutorials — they’re pieces of soul.
+            Walk through stories where mountains echo, pixels dance, and code breathes life.
+            These are not just articles — they are verses from a journal, scattered across the web.
           </motion.p>
 
-          {/* Blog Previews */}
+          {/* Poetic Blog Cards */}
           <motion.div
             className="space-y-6 pt-2"
             initial={{ opacity: 0, y: 10 }}
@@ -66,22 +62,23 @@ export default function BlogSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             {blogPosts.map((post, i) => (
-              <Link key={i} href={post.slug}>
-                <div className="border border-border rounded-xl p-5 hover:shadow-xl transition cursor-pointer bg-background group">
-                  <h2 className="text-xl font-semibold group-hover:text-primary transition-colors">{post.title}</h2>
-                  <p className="text-muted-foreground mt-1">{post.description}</p>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {post.tags?.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="text-xs bg-muted text-foreground px-2 py-0.5 rounded-full"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
+              <div
+                key={i}
+                className="border border-border rounded-xl p-5 bg-background shadow-sm"
+              >
+                <h2 className="text-xl font-semibold text-primary/90">{post.title}</h2>
+                <p className="text-muted-foreground mt-2 italic">{post.description}</p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {post.tags?.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="text-xs bg-muted text-foreground px-2 py-0.5 rounded-full"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
                 </div>
-              </Link>
+              </div>
             ))}
           </motion.div>
         </div>
