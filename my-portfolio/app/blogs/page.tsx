@@ -4,95 +4,78 @@ import { motion } from "framer-motion"
 
 const blogPosts = [
   {
-    title: "Mardi Himal Expedition: A Lesson in Resilience and Solitude",
+    title: "Trekking to Mardi Himal: My Mountain Escape",
     description:
-      "A reflective journey through Nepal’s highlands — where silent peaks inspired clarity and the path redefined perseverance.",
+      "An awe-inspiring trek across the Himalayas where every step taught resilience and nature whispered serenity. Join me on a personal adventure through Nepal's hidden trail.",
     tags: ["Trekking", "Nepal", "Adventure"],
   },
   {
-    title: "The Art of Motion: How Animation Transformed My Storytelling",
+    title: "How I Discovered a Passion for Animation",
     description:
-      "From Blender to After Effects — uncover how I began crafting visual stories that blend emotion, timing, and design.",
+      "From Blender's 3D experimentation to After Effects' storytelling — a creative journey into the world of animation and motion design.",
     tags: ["Animation", "Blender", "Storytelling"],
   },
   {
-    title: "Scalable Backend Architecture with Node.js & Express",
+    title: "Building Scalable APIs with Node.js",
     description:
-      "Explore the principles behind building reliable, modular APIs — and why Node.js is the heartbeat of modern web systems.",
-    tags: ["Node.js", "Backend", "API Design"],
+      "Explore how to design scalable, maintainable backend systems with Node.js — the backbone of modern web apps.",
+    tags: ["Node.js", "Backend", "API"],
   },
   {
-    title: "React Native in Practice: Crafting Cross-Platform Mobile Experiences",
+    title: "React Native: From Concept to App Store",
     description:
-      "An engineer’s guide to building fast, user-friendly mobile apps using React Native and component-first thinking.",
-    tags: ["React Native", "Mobile", "Cross-Platform"],
-  },
-  {
-    title: "Design Meets Code: Building Intuitive Frontend Interfaces",
-    description:
-      "Go beyond layout — learn how to design with empathy, code with intention, and deliver interfaces users love.",
-    tags: ["Frontend", "UX", "Design"],
-  },
-  {
-    title: "From Zero to Full Stack: Building with the MERN Ecosystem",
-    description:
-      "A practical overview of MongoDB, Express, React, and Node.js — and how these technologies shape today’s scalable web platforms.",
-    tags: ["MERN", "Full Stack", "Web Development"],
+      "Learn how I transformed ideas into functional mobile apps using React Native. One codebase, multiple platforms, endless creativity.",
+    tags: ["React Native", "Mobile", "Frontend"],
   },
 ]
 
 export default function BlogSection() {
   return (
-    <section className="w-full min-h-screen pt-32 pb-24 px-6 lg:px-12">
-      {/* Header Section */}
-      <div className="mb-16 ">
+    <section className="w-full px-6 py-16 lg:px-12">
+      <div className="max-w-3xl mx-auto text-center mb-16">
         <motion.h1
-          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+          className="text-4xl md:text-5xl font-bold mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Echoes from the Blog
         </motion.h1>
-
         <motion.p
-          className="text-muted-foreground text-lg md:text-xl mt-4 max-w-3xl "
+          className="text-muted-foreground text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Stories that reflect a developer’s growth — from high-altitude lessons to deep dives into code, design, and the creative process.
+          Walk through stories where mountains echo, pixels dance, and code breathes life. These aren't just articles —
+          they're experiences woven into words.
         </motion.p>
       </div>
 
-      {/* Blog Grid Section */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        className="grid md:grid-cols-2 gap-8"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         {blogPosts.map((post, i) => (
-          <motion.article
+          <div
             key={i}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
-            className="border border-border rounded-xl p-6 bg-background shadow-md hover:shadow-lg transition-shadow"
+            className="group border border-border rounded-xl bg-card p-6 hover:border-primary/50 transition-colors flex flex-col"
           >
-            <h2 className="text-xl font-semibold text-primary/90">{post.title}</h2>
-            <p className="text-muted-foreground mt-2">{post.description}</p>
-            <div className="flex flex-wrap gap-2 mt-4">
+            <h2 className="text-xl font-semibold text-primary/90 mb-2">{post.title}</h2>
+            <p className="text-muted-foreground mb-4">{post.description}</p>
+            <div className="flex flex-wrap gap-2 mt-auto">
               {post.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="text-xs bg-muted text-foreground px-2 py-0.5 rounded-full"
+                  className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full"
                 >
                   #{tag}
                 </span>
               ))}
             </div>
-          </motion.article>
+          </div>
         ))}
       </motion.div>
     </section>
