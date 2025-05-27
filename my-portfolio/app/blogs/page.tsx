@@ -43,58 +43,58 @@ const blogPosts = [
 
 export default function BlogSection() {
   return (
-    <section className="relative min-h-screen pt-32 pb-24 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-start">
-        <div className="space-y-10">
-          <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Echoes from the Blog
-          </motion.h1>
-
-          <motion.p
-            className="text-muted-foreground text-lg md:text-xl max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Stories that reflect a developer’s growth — from high-altitude lessons to deep dives into code, design, and the creative process.
-          </motion.p>
-        </div>
-
-        <motion.div
-          className="space-y-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+    <section className="w-full min-h-screen pt-32 pb-24 px-6 lg:px-12">
+      {/* Header Section */}
+      <div className="mb-16 ">
+        <motion.h1
+          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          {blogPosts.map((post, i) => (
-            <motion.article
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
-              className="border border-border rounded-xl p-6 bg-background shadow-md hover:shadow-lg transition-shadow"
-            >
-              <h2 className="text-xl font-semibold text-primary/90">{post.title}</h2>
-              <p className="text-muted-foreground mt-2">{post.description}</p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {post.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="text-xs bg-muted text-foreground px-2 py-0.5 rounded-full"
-                  >
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            </motion.article>
-          ))}
-        </motion.div>
+          Echoes from the Blog
+        </motion.h1>
+
+        <motion.p
+          className="text-muted-foreground text-lg md:text-xl mt-4 max-w-3xl "
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Stories that reflect a developer’s growth — from high-altitude lessons to deep dives into code, design, and the creative process.
+        </motion.p>
       </div>
+
+      {/* Blog Grid Section */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        {blogPosts.map((post, i) => (
+          <motion.article
+            key={i}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
+            className="border border-border rounded-xl p-6 bg-background shadow-md hover:shadow-lg transition-shadow"
+          >
+            <h2 className="text-xl font-semibold text-primary/90">{post.title}</h2>
+            <p className="text-muted-foreground mt-2">{post.description}</p>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {post.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="text-xs bg-muted text-foreground px-2 py-0.5 rounded-full"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </motion.article>
+        ))}
+      </motion.div>
     </section>
   )
 }
