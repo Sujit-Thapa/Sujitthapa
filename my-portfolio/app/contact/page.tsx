@@ -79,6 +79,8 @@ export default function ContactForm() {
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
 
+      
+    
       {status === "success" && <p className="text-green-500 mt-2">Message sent successfully!</p>}
       {status === "error" && <p className="text-red-500 mt-2">Something went wrong. Try again.</p>}
     </form>

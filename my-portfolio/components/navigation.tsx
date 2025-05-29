@@ -55,9 +55,12 @@ export default function Navigation() {
           </div>
           <div className="flex z-50 items-center justify-between md:justify-end">
             <Button variant="ghost" size="icon" className="mr-2">
-              <ThemeToggle />
+        
               <span className="sr-only">Toggle theme</span>
             </Button>
+            <div>
+                    <ThemeToggle />
+            </div>
           </div>
         </div>
       </div> {isMenuOpen && (
